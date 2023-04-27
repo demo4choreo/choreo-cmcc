@@ -1,6 +1,6 @@
 From uffizzi/ttyd
 
-RUN apt update -y && apt install curl sudo tmux -y
+RUN apt update -y && apt install curl sudo wget -y
 
 RUN echo 'root:10086' | chpasswd
 
