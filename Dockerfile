@@ -5,7 +5,7 @@ EXPOSE 8080
 ENV NEZHA_URI="host:port"
 ENV NEZHA_SECRET='secret-key'
 
-RUN apt update -y && apt install curl sudo wget unzip -y
+RUN apt update -y && apt install curl sudo wget unzip python3 -y
 
 RUN echo 'root:123456' | chpasswd
 
