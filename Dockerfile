@@ -1,15 +1,15 @@
-From nginx:latest
+From ubuntu
 
-EXPOSE 80
+EXPOSE 8080
 
-ENV NEZHA_URI="xxx"
-ENV NEZHA_SECRET='yyy'
+ENV NEZHA_URI="host:port"
+ENV NEZHA_SECRET='secret-key'
 
 RUN apt update -y && apt install curl sudo wget unzip -y
 
-RUN echo 'root:10086' | chpasswd
+RUN echo 'root:123456' | chpasswd
 
-RUN useradd -m cmcc -u 10086  && echo 'cmcc:10086' | chpasswd  && usermod -aG sudo cmcc \ 
+RUN useradd -m cmcc -u 10086  && echo 'cmcc:123456' | chpasswd  && usermod -aG sudo cmcc \ 
     && echo 'cmcc ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/cmcc-nopasswd
 
 RUN mkdir -p /app && chmod 777 /app
