@@ -27,4 +27,4 @@ RUN wget https://github.com/naiba/nezha/releases/download/v0.14.11/nezha-agent_l
     && unzip nezha-agent_linux_amd64.zip  && sudo chmod a+x nezha-agent
    
 
-CMD [ "./entrypoint.sh"]
+CMD [ "bash", "./entrypoint.sh"]
